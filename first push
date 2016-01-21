@@ -1,0 +1,53 @@
+//  TODO: Write some awesome Swift code, or import libraries like "Foundation",
+//  "Dispatch", or "Glibc"
+
+print("Hello world!")
+class User{
+    var name:String = ""
+    var age:Int = 0
+    var address:String = ""
+    
+    init (name:String, age:Int, address:String) {
+    self.name = name
+    self.age = age
+    self.address = address
+    }
+    func whoami() ->String {
+        return "i am \(name) and i am \(age) years old and im at \(address)"
+    
+    }
+}
+
+var Sam = User(name: "Sam", age: 19 , address: "HOWARD")
+
+var userArray = [User]()
+userArray.append(User(name: "Rod", age: 19 , address: "HOWARD"))
+userArray.append(User(name: "Jim", age: 24 , address: "HOWARD"))
+userArray.append(User(name: "Stan", age: 14 , address: "HOWARD"))
+userArray.append(User(name: "Tony", age: 35 , address: "HOWARD"))
+userArray.append(User(name: "Bill", age: 56 , address: "HOWARD"))
+
+var woop = 0
+for element in userArray {
+  if element.age > woop {
+      woop = element.age
+  }
+}
+var ave = 0
+var num = 0
+for element in userArray {
+    ave += element.age
+    num++
+}
+var newAve = ave/num
+
+var less = userArray[0].age
+for element in userArray {
+  if element.age < less {
+      less = element.age
+  }
+}
+print("The max age of the users is", woop)
+print("The average age of the users is", newAve)
+print("The lowest age of the users is", less)
+print(Sam.whoami())
